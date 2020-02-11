@@ -1,3 +1,10 @@
+@import 'styles/vars.scss';
+@import 'styles/layout.scss';
+@import 'styles/header.scss';
+@import 'styles/footer.scss';
+
+html { font-size: 10px; } /* set 1rem as 10px*/
+
 .App {
   text-align: center;
 }
