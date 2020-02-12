@@ -52,7 +52,8 @@ class Movie extends Component {
   }
 
   render() {
-    const containerClass = (this.props.location.pathname.match("/movie")) ?  "movies__banner__cont inner" : "movies__banner__cont";   
+    if(this.props.movie.length === 0) return null; // react conditional rendering to avoid render twice ; before and after the API call was over
+
     const { movie } = this.props;
     const voteAveragePercentil = (movie.vote_average) * 100 / 10;
     let genres = this.getGenres(movie);
@@ -63,7 +64,7 @@ class Movie extends Component {
           <div className="movies__banner__bg" style={this.setBgStyles(movie.backdrop_path)}>
             <img className="movies__banner__poster" src={this.setPoster(movie.poster_path)} alt={`${movie.original_title} poster.`} />
               
-            <div className={containerClass}>
+            <div className='movies__banner__cont inner'>
               <h2 className="title">{movie.original_title}</h2>
               <p className="tagline">{movie.tagline}</p>
               <p className="overview">{movie.overview}</p>
