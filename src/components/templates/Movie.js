@@ -72,7 +72,7 @@ class Movie extends Component {
               <p><strong>Genres:</strong> {genres}</p>
               {(movie.budget) ? <p><strong>Budget:</strong> ${this._getNumberWithCommas(movie.budget)}</p> : null }
               {(movie.revenue) ? <p><strong>Revenue:</strong> ${this._getNumberWithCommas(movie.revenue)}</p> : null }
-              {(movie.homepage) ? <p><strong>Official website:</strong> <a href="{movie.homepage}" target="blank">{movie.homepage}</a></p> : null }
+              {(movie.homepage) ? <p><strong>Official website:</strong> <a href={movie.homepage} target="blank">{movie.homepage}</a></p> : null }
             </div>
 
             <CircularProgressbar 
